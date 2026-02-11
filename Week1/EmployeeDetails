@@ -1,0 +1,29 @@
+package week1.day1;
+
+public class EmployeeDetails {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		int age = 30;
+		String name = "Ashwin";
+		char gender = 'M';
+		long salary = 400000l;
+		double weight = 80.09d;
+		long mobile = 9551334254l;
+		float rating = 4.5f;
+		
+		System.out.println("My Name is "+name);
+		System.out.println("My Age is "+age);
+		System.out.println("Gender = " +gender);
+		System.out.println("My Salary is "+salary);
+		System.out.println("My Weight is "+weight);
+		System.out.println("My Mobile no is "+mobile);
+		System.out.println("My Last Rating "+rating);
+		
+	
+		
+
+	}
+
+}
