@@ -1,0 +1,48 @@
+package week3.day1;
+
+import java.time.Duration;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+
+public class FacebookHomeAssignment {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		ChromeDriver driver = new ChromeDriver();
+		driver.get("https://en-gb.facebook.com/");
+		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		
+		driver.findElement(By.linkText("Create new account")).click();
+		WebElement firstName = driver.findElement(By.xpath("//input[@name='firstname']"));
+		firstName.sendKeys("Ashwin");
+		WebElement surName = driver.findElement(By.xpath("//input[@name='lastname']"));
+		surName.sendKeys("Ramesh");
+		WebElement mobNum = driver.findElement(By.xpath("//input[@name='reg_email__']"));
+		mobNum.sendKeys("9551334254");
+		WebElement passw = driver.findElement(By.xpath("//input[@name='reg_passwd__']"));
+		passw.sendKeys("HelloWorld");
+		WebElement day = driver.findElement(By.name("birthday_day"));
+		Select d1= new Select(day);
+		d1.selectByVisibleText("24");
+		
+		WebElement month = driver.findElement(By.name("birthday_month"));
+		Select m1 = new Select(month);
+		m1.selectByVisibleText("Sep");
+		
+		WebElement year = driver.findElement(By.name("birthday_year"));
+		Select ye = new Select(year);
+		ye.selectByVisibleText("1994");
+		
+		WebElement rd = driver.findElement(By.xpath("//input[@type='radio' and @value='2']"));
+		rd.click();
+		
+
+	}
+
+}
