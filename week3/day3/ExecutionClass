@@ -1,0 +1,35 @@
+package week3.day1;
+
+public class ExecutionClass extends ButtonSub {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		//creating object for WebElement class and calling the methods
+		WebElement ec = new WebElement();
+		ec.click();
+		ec.setText("Hello World");
+		//creating object for ButtonSub class and calling the method
+		ButtonSub bs = new ButtonSub();
+		bs.submitBut();
+		bs.click();
+		//creating object for TextFieldSub class and calling the method
+		TextFieldSub tfs = new TextFieldSub();
+		tfs.getTextM();
+		//creating object for CheckBoxButton class and calling the method
+		CheckBoxButton cb = new CheckBoxButton();
+		cb.clickCheckButton();
+		cb.submitBut();
+		cb.click();
+		//creating object for RadioButton class and calling the method
+		RadioButton rb = new RadioButton();
+		rb.selectRadioButton();
+		rb.click();
+		rb.submitBut();
+
+
+
+
+	}
+
+}
