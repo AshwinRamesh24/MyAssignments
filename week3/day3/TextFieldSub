@@ -1,0 +1,12 @@
+package week3.day1;
+
+public class TextFieldSub extends WebElement {
+
+	
+	public String getTextM()
+	{
+		System.out.println("get Text");
+		return "sample text" ;
+	}
+	
+}
