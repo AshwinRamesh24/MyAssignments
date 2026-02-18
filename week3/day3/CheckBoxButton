@@ -1,0 +1,11 @@
+package week3.day1;
+
+public class CheckBoxButton extends ButtonSub {
+
+	
+	public void clickCheckButton()
+	{
+		System.out.println("Checkbox Button clicked");
+	}
+	
+}
