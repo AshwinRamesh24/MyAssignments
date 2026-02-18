@@ -1,0 +1,17 @@
+package week3.day1;
+
+public class WebElement {
+
+	
+	public void click()
+	{
+		System.out.println("Web Element Clicked");
+	}
+	
+	public void setText(String Text)
+	{
+		System.out.println("Text set to");
+	}
+	
+
+}
