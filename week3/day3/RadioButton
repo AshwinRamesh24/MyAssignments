@@ -1,0 +1,10 @@
+package week3.day1;
+
+public class RadioButton extends ButtonSub
+{
+	public void  selectRadioButton()
+	{
+		System.out.println("Radio Button");
+	}
+	
+}
