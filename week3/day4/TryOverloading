@@ -1,0 +1,31 @@
+package week3.day4;
+
+public class TryOverloading {
+	
+	public void reportStep(String msg, String status)
+	{
+		System.out.println("message: " + msg + " | status: "  + status);
+	}
+	
+	public void reportStep(String msg, String status, boolean snap)
+	{
+		System.out.println("message: " + msg + " | status: "  + status);
+		if(snap)
+		{
+			System.out.println("Snapshot taken.");
+		}
+		else
+			System.out.println("Snapshot not taken");
+	}
+
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		TryOverloading tl = new TryOverloading();
+		tl.reportStep("Hey hi" , "pass");
+		tl.reportStep("Hey bye", "fail", true);
+		
+		
+	}
+
+}
