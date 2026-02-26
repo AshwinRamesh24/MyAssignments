@@ -1,0 +1,59 @@
+package week4.day1;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class RedBus {
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		
+		ChromeDriver driver = new ChromeDriver();
+		driver.manage().window().maximize();
+		driver.get("https://www.redbus.in/");
+		driver.findElement(By.id("srcinput")).sendKeys("Tambaram");
+		Thread.sleep(3000);
+		//Providing the source and destination
+		driver.findElement(By.xpath("//div[contains(text(), 'Tambaram')]")).click();
+		driver.findElement(By.id("destinput")).sendKeys("Madurai");
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("//div[contains(text(), 'Madurai')]")).click();
+		driver.findElement(By.xpath("//button[text()='Tomorrow']")).click();
+		//driver.findElement(By.xpath("//div[@data-datetype='AVAILABLE']")).click();
+		Thread.sleep(5000);
+		//Getting the overall number of buses in page
+		WebElement noofbuses = driver.findElement(By.className("busesFoundText__ind-search-styles-module-scss-PHVGD"));
+		System.out.println(noofbuses.getText());
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//div[contains(@class,'mainContainer')]//div[contains(text(),'AC')]")).click();
+		//Getting the number of AC buses after filter
+		WebElement noofacbuses = driver.findElement(By.className("busesFoundText__ind-search-styles-module-scss-PHVGD"));
+		Thread.sleep(3000);
+		System.out.println(noofacbuses.getText());
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//div[contains(text(), 'High Rated Buses ')]")).click();
+		// Capture all prices
+		List<WebElement> busPrices = driver.findElements(By.xpath("//div/p[contains(@class, 'finalFare')]"));
+		List<Integer> prices = new ArrayList<Integer>();
+		for(WebElement price : busPrices)
+		{
+			int busP = Integer.parseInt(price.getText().replaceAll("[^0-9.]", ""));
+			prices.add(busP);
+		}
+		Collections.sort(prices);
+		
+		System.out.println("Lowest Bus Price is " + prices.get(0));
+		//print page title
+		System.out.println("Page Title is: " + driver.getTitle());
+		
+		Thread.sleep(2000);
+		
+		driver.quit();
+	}
+
+}
